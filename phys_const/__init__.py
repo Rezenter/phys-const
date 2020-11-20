@@ -1,3 +1,4 @@
+## @package constants
 #  This module provides physical constants in uniform format.
 
 ## [C], electron charge.
@@ -24,6 +25,7 @@ k_b = 1.38064852e-23
 ## Coverts pressure from [Torr] to [Pa]
 def torr_to_pa(torr):
     return torr * 7.5006 * 1e-3
+
 
 ## floating point infinity
 inf = float('inf')
