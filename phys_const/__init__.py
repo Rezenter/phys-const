@@ -24,8 +24,10 @@ k_b = 1.38064852e-23
 
 ## Coverts pressure from [Torr] to [Pa]
 def torr_to_pa(torr):
-    return torr * 7.5006 * 1e-3
+    return torr * 133.322368421
 
+def cels_to_kelv(cels):
+    return cels + 273.15
 
 ## floating point infinity
 inf = float('inf')
