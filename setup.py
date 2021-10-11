@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="phys_const", # Replace with your own username
-    version="0.0.1",
+    name="phys_const",
+    version="0.1.0",
     author="Rezenter",
     author_email="nisovru@gmail.com",
     description="Pack of physical constants.",
@@ -20,3 +20,6 @@ setuptools.setup(
     ],
     python_requires='>=3.6',
 )
+
+#python setup.py sdist bdist_wheel
+#python -m twine upload dist/*
