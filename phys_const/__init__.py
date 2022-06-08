@@ -47,17 +47,31 @@ def interpolate(x_prev: float, x_tgt: float, x_next: float, y_prev: float, y_nex
 
 
 ## linear interpolation in array
-def interpolate_arr(x_arr_desc: list[float], y_arr: list[float], x: float) -> float:
-    if len(x_arr_desc) != len(y_arr):
-        print('Input array have different length: %d vs %d. Throwing error' % (len(x_arr_desc), len(y_arr)))
+def interpolate_arr(x_arr: list[float], y_arr: list[float], x_tgt: float) -> float:
+    if len(x_arr) != len(y_arr):
+        print('Input array have different length: %d vs %d. Throwing error' % (len(x_arr), len(y_arr)))
         fuckOff
-    if x >= x_arr_desc[0] or x <= x_arr_desc[-1]:
-        print('Warning! x out of bounds!')
-        return inf
-    for ind in range(len(x_arr_desc) - 1):
-        if x_arr_desc[ind] >= x > x_arr_desc[ind + 1]:
-            return interpolate(x_prev=x_arr_desc[ind], x_tgt=x, x_next=x_arr_desc[ind + 1], y_prev=y_arr[ind], y_next=y_arr[ind + 1])
-    print(x_arr_desc[0], x, x_arr_desc[-1])
+    is_ascending = True
+    if x_arr[0] > x_arr[-1]:
+        is_ascending = False
+
+    if is_ascending:
+        if x_tgt <= x_arr[0] or x_tgt >= x_arr[-1]:
+            print('Warning! x out of bounds!')
+            return inf
+    else:
+        if x_tgt >= x_arr[0] or x_tgt <= x_arr[-1]:
+            print('Warning! x out of bounds!')
+            return inf
+    for ind in range(len(x_arr) - 1):
+        if is_ascending:
+            if x_arr[ind] <= x_tgt < x_arr[ind + 1]:
+                return interpolate(x_prev=x_arr[ind], x_tgt=x_tgt, x_next=x_arr[ind + 1], y_prev=y_arr[ind],
+                                   y_next=y_arr[ind + 1])
+        else:
+            if x_arr[ind] >= x_tgt > x_arr[ind + 1]:
+                return interpolate(x_prev=x_arr[ind], x_tgt=x_tgt, x_next=x_arr[ind + 1], y_prev=y_arr[ind], y_next=y_arr[ind + 1])
+    print(x_arr[0], x_tgt, x_arr[-1])
     print('WTF?')
     return fuckOff
 
