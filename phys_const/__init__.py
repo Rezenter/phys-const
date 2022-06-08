@@ -47,8 +47,13 @@ def interpolate(x_prev: float, x_tgt: float, x_next: float, y_prev: float, y_nex
 
 
 ## radians to degrees converter
-def rad_to_deg(deg: float) -> float:
-    return deg * 180 / math.pi
+def rad_to_deg(rad: float) -> float:
+    return rad * 180 / math.pi
+
+
+## degrees to radians converter
+def deg_to_rad(deg: float) -> float:
+    return deg * math.pi / 180
 
 
 ## angle between two vectors. Result from 0 to 2Pi.

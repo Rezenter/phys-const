@@ -47,6 +47,12 @@ def rad_to_deg(deg: float) -> float:
     return deg * 180 / math.pi
 ```
 
+## degrees to radians converter
+```
+def deg_to_rad(deg: float) -> float:
+    return deg * math.pi / 180
+```
+
 ## angle between two vectors. Result from 0 to 2Pi.
 ```
 def vector_angle(first_x: float, first_y: float, second_x: float, second_y: float) -> float:
