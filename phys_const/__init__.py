@@ -21,11 +21,13 @@ r_o: float = 2.8179403267e-15
 t_room: float = 273 + 23
 
 ## [J / K], Boltzmann constant
-k_b = 1.38064852e-23
+k_b: float = 1.38064852e-23
 
 ## [F / m] = [A2 * s4 / (kg * m3)], permittivity of free space
 eps_0: float = 8.85418781e-12
 
+## [eV / J] energy converter
+Joule_to_eV: float = 6.241509e18
 
 ## Converts pressure from [Torr] to [Pa]
 def torr_to_pa(torr: float) -> float:
