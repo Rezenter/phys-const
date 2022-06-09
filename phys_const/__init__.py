@@ -51,7 +51,7 @@ def interpolate(x_prev: float, x_tgt: float, x_next: float, y_prev: float, y_nex
 ## linear interpolation in array
 def interpolate_arr(x_arr: list[float], y_arr: list[float], x_tgt: float) -> float:
     if len(x_arr) != len(y_arr):
-        print('Input array have different length: %d vs %d. Throwing error' % (len(x_arr), len(y_arr)))
+        print('Input arrays have different length: %d vs %d. Throwing error' % (len(x_arr), len(y_arr)))
         fuckOff
     is_ascending = True
     if x_arr[0] > x_arr[-1]:
@@ -94,3 +94,14 @@ def vector_angle(first_x: float, first_y: float, second_x: float, second_y: floa
     if angle < 0:
         angle += math.tau
     return angle
+
+
+## integrate array by trapz
+def integrate(x_arr: list[float], y_arr: list[float]) -> float:
+    res: float = 0.0
+    if len(x_arr) != len(y_arr):
+        print('Input arrays have different length: %d vs %d. Throwing error' % (len(x_arr), len(y_arr)))
+        fuckOff
+    for ind in range(len(x_arr) - 1):
+        res += (y_arr[ind] + y_arr[ind + 1]) * 0.5 * (x_arr[ind + 1] - x_arr[ind])
+    return res

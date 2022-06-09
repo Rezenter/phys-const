@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="phys_const",
-    version="0.1.4",
+    version="0.1.5",
     author="Rezenter",
     author_email="nisovru@gmail.com",
     description="Pack of physical constants.",

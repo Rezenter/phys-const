@@ -24,6 +24,9 @@ k_b = 1.38064852e-23
 ## [F / m] = [A2 * s4 / (kg * m3)], permittivity of free space
 eps_0: float = 8.85418781e-12
 
+## [eV / J] energy converter
+Joule_to_eV: float = 6.241509e18
+
 ## Converts pressure from [Torr] to [Pa]
 def torr_to_pa(torr):
     return torr * 7.5006 * 1e-3
@@ -66,4 +69,10 @@ def vector_angle(first_x: float, first_y: float, second_x: float, second_y: floa
     if angle < 0:
         angle += math.tau
     return angle
+```
+
+## integrate array by trapz
+```
+def integrate(x_arr: list[float], y_arr: list[float]) -> float:
+...  
 ```
