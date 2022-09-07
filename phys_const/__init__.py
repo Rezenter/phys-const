@@ -29,6 +29,33 @@ eps_0: float = 8.85418781e-12
 ## [eV / J] energy converter
 Joule_to_eV: float = 6.241509e18
 
+## [K / eV] energy converter
+eV_to_K: float = 1.160451812e4
+
+## different unit prefix
+class Unit:
+    c: float = 1e-2  # centi
+    m: float = 1e-3  # milli
+    mk: float = 1e-6  # micro
+    n: float = 1e-9  # nano
+    p: float = 1e-12  # pico
+    f: float = 1e-15  # femto
+
+    k: int = 1000  # kilo
+    M: int = k * k  # mega
+    G: int = M * k  # giga
+    T: int = M * M  # tera
+
+
+## [kg] a.m.u. mass converter
+amu_to_kg: float = 1.66053906660e-27
+
+## [kg] mass of H isotopes
+class H_mass:
+    H: float = 1.007825031898 * amu_to_kg
+    D: float = 2.014101777844 * amu_to_kg
+    T: float = 3.016049281320 * amu_to_kg
+
 ## Converts pressure from [Torr] to [Pa]
 def torr_to_pa(torr: float) -> float:
     return torr * 133.322368421
